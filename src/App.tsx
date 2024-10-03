@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { MdOutlineCalculate } from "react-icons/md";
 import { RiApps2AddLine } from "react-icons/ri";
 import { BsHeartArrow, BsHearts } from "react-icons/bs";
+import { FaXmark } from "react-icons/fa6";
 
 // Define Course interface
 interface Course {
@@ -37,6 +38,11 @@ const App = () => {
   ) => {
     const newCourses = [...courses];
     newCourses[index][field] = value;
+    setCourses(newCourses);
+  };
+
+  const handleDeleteCourse = (index: number) => {
+    const newCourses = courses.filter((_, i) => i !== index);
     setCourses(newCourses);
   };
 
@@ -179,6 +185,9 @@ const App = () => {
               <option value="E">E</option>
               <option value="F">F</option>
             </select>
+            <button onClick={() => handleDeleteCourse(index)} className="ml-2">
+              <FaXmark color="red" />
+            </button>
           </motion.div>
         ))}
 
