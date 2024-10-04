@@ -3,7 +3,12 @@ import { motion } from "framer-motion";
 import Modal from "react-modal";
 import { ToastContainer, toast } from "react-toastify";
 import Lottie from "lottie-react";
-import congrats from "./assets/congrats.json";
+import congrats from "./assets/cheers.json";
+import good from "./assets/good.json";
+import second from "./assets/second.json";
+import fourth from "./assets/fourth.json";
+import fifth from "./assets/fifth.json";
+import great from "./assets/great.json";
 import "react-toastify/dist/ReactToastify.css";
 import { MdOutlineCalculate } from "react-icons/md";
 import { RiApps2AddLine } from "react-icons/ri";
@@ -25,6 +30,7 @@ const App = () => {
   const [showInput, setShowInput] = useState(true);
   const [loading, setLoading] = useState(false);
   const [cheer, setCheer] = useState(false);
+  const [animation, setAnimation] = useState<any>("");
   const [gpaMessage, setGpaMessage] = useState("");
 
   const handleAddCourse = () => {
@@ -102,26 +108,31 @@ const App = () => {
     if (gpaValue >= 4.5) {
       setGpaMessage("Congratulations! You are the GOAT. First Class!");
       setCheer(true);
+      setAnimation(great);
     } else if (gpaValue >= 4.0 && gpaValue < 4.5) {
       setGpaMessage(
         "Great job! You earned a Second Class Upper. You sef no small o"
       );
       setCheer(false);
+      setAnimation(second);
     } else if (gpaValue >= 3.5 && gpaValue < 4.0) {
       setGpaMessage(
         "Well done! You earned a Second Class Lower. You sef don try oga mi"
       );
       setCheer(false);
+      setAnimation(good);
     } else if (gpaValue >= 3.0 && gpaValue < 3.5) {
       setGpaMessage(
         "Good effort! You earned a Third Class. You can do better blud"
       );
       setCheer(false);
+      setAnimation(fourth);
     } else {
       setGpaMessage(
         "You passed, keep working hard! NO GIVE UP, NA MUMU DEY GIVE UP"
       );
       setCheer(false);
+      setAnimation(fifth);
     }
 
     setLoading(false);
@@ -250,6 +261,7 @@ const App = () => {
                 >
                   {gpa}
                 </motion.div>
+                <Lottie animationData={animation} loop={1} />
                 <p className="mt-4 font-bold text-lg">{gpaMessage}</p>
                 <button
                   onClick={() => setIsModalOpen(false)}
