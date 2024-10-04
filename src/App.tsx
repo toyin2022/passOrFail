@@ -8,6 +8,8 @@ import good from "./assets/good.json";
 import second from "./assets/second.json";
 import fourth from "./assets/fourth.json";
 import fifth from "./assets/fifth.json";
+import sixth from "./assets/sixth.json";
+import puff from "./assets/puff.json";
 import great from "./assets/great.json";
 import "react-toastify/dist/ReactToastify.css";
 import { MdOutlineCalculate } from "react-icons/md";
@@ -127,6 +129,16 @@ const App = () => {
       );
       setCheer(false);
       setAnimation(fourth);
+    } else if (gpaValue <= 1.0 && gpaValue >= 0.5) {
+      setGpaMessage("GIVE UP!!!, You sef don try, GO FIND POS MACHINE");
+      setCheer(false);
+      setAnimation(sixth);
+    } else if (gpaValue === 0.0) {
+      setGpaMessage(
+        "Education no be for you o ejeh, egbon adugbo work sef no bad"
+      );
+      setCheer(false);
+      setAnimation(puff);
     } else {
       setGpaMessage(
         "You passed, keep working hard! NO GIVE UP, NA MUMU DEY GIVE UP"
