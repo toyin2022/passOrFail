@@ -294,7 +294,7 @@ const App = () => {
         </p>
         <div className="">
           <a
-            href="https://code-with-toyin.vercel.app/"
+            href="https://toyin-portfolio.vercel.app/"
             target="_blank"
             className="text-lime-400 flex items-center justify-center gap-2"
           >
