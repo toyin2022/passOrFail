@@ -111,29 +111,29 @@ const App = () => {
       setGpaMessage("Congratulations! You are the GOAT. First Class!");
       setCheer(true);
       setAnimation(great);
-    } else if (gpaValue >= 4.0 && gpaValue < 4.5) {
+    } else if (gpaValue >= 3.5 && gpaValue < 4.99) {
       setGpaMessage(
         "Great job! You earned a Second Class Upper. You sef no small o"
       );
       setCheer(false);
       setAnimation(second);
-    } else if (gpaValue >= 3.5 && gpaValue < 4.0) {
+    } else if (gpaValue >= 2.4 && gpaValue < 3.49) {
       setGpaMessage(
         "Well done! You earned a Second Class Lower. You sef don try oga mi"
       );
       setCheer(false);
       setAnimation(good);
-    } else if (gpaValue >= 3.0 && gpaValue < 3.5) {
+    } else if (gpaValue >= 1.5 && gpaValue < 2.39) {
       setGpaMessage(
         "Good effort! You earned a Third Class. You can do better blud"
       );
       setCheer(false);
       setAnimation(fourth);
-    } else if (gpaValue <= 1.0 && gpaValue >= 0.5) {
+    } else if (gpaValue <= 1.49 && gpaValue >= 1.0) {
       setGpaMessage("GIVE UP!!!, You sef don try, GO FIND POS MACHINE");
       setCheer(false);
       setAnimation(sixth);
-    } else if (gpaValue === 0.0) {
+    } else if (gpaValue < 1.0) {
       setGpaMessage(
         "Education no be for you o ejeh, egbon adugbo work sef no bad"
       );
